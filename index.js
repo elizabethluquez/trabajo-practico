@@ -1,34 +1,33 @@
 const urlApi = 'https://thronesapi.com/api/v2/Characters';
 
-async function buscarPersonaje(name) {
-    try {
-        // Promesa
-        const response = await fetch(urlApi);
-        if (!response.ok) {
-            throw new Error('Error ' + response.status);
-        }
+// async function buscarPersonaje(name) {
+//     try {
+//         // Promesa
+//         const response = await fetch(urlApi);
+//         if (!response.ok) {
+//             throw new Error('Error ' + response.status);
+//         }
         
-        const datos = await response.json();
-        // console.log (datos);
+//         const datos = await response.json();
+//         // console.log (datos);
 
-        // Busco el personaje por su nombre (Ned Stark)
-        // const personaje = datos.find(personaje => personaje.fullName === name);
-        // console.log(personaje);
-    } catch (error) {
-        console.log('Error', error);
-    }
-}
+//         // Busco el personaje por su nombre (Ned Stark)
+//         const personaje = datos.find(personaje => personaje.fullName === name);
+//         console.log(personaje);
+//     } catch (error) {
+//         console.log('Error', error);
+//     }
+// }
 // buscarPersonaje("Ned Stark");
-// Recupero todos los personajes disponibles
+// // Recupero todos los personajes disponibles
 // buscarPersonaje();
 
 // leo el archivo de personajes JSON.
 const fs = require('fs');
 
-function leerPersojanes() {
 const datos = fs.readFileSync('./personajes.json', 'utf-8');
-return JSON.parse(datos);
-}
+const personajes = JSON.parse(datos);
+
 // console.log(personajes);
 function escribirpersonajes (personajes) {
 fs.writeFileSync('./personajes.json', JSON.stringify(personajes, null, 2), 'utf-8');
@@ -39,33 +38,31 @@ fs.writeFileSync('./personajes.json', JSON.stringify(personajes, null, 2), 'utf-
 // }
 
 // const personajesHouseStark = filtrarporfamilia ('House Stark');
-// // console.log (personajesHouseStark);
+// console.log (personajesHouseStark);
+const crearpersonaje= {"id": 53,
+    "firstName": 'Maria',
+    "lastName": "Stark",
+    "fullName": "Maria Stark",
+    "title": "No One",
+    "family": "House Stark",
+    "image": "",
+    "imageUrl": "",
+};
 
- function crearpersonaje (personajenuevo){
-    let personajes = leerPersojanes();
- personajes.push(personajenuevo);
- escribirpersonajes (personajes);
+personajes.push(crearpersonaje);
+console.log (personajes)
+escribirpersonajes (personajes);
 
-}
-
-crearpersonaje({"id": 53,
-      "firstName": 'Maria',
-      "lastName": "Stark",
-      "fullName": "Maria Stark",
-      "title": "No One",
-      "family": "House Stark",
-      "image": "",
-      "imageUrl": "",
-    });
-// console.log (personajes)
 
 function eliminarpersonajes (){
-    let personajes = leerPersojanes();
-    personajes.filter(personaje => personaje.id <= 25);
-    escribirpersonajes (personajes);
+    fs.readFileSync('./personajes.json', 'utf-8');
+let personajesfiltrados = personajes.filter(personaje => personaje.id < 25);
+escribirpersonajes (personajesfiltrados);
+return personajesfiltrados
 }
-console.log(personajes);
-eliminarpersonajes();
+const personajeseliminados = eliminarpersonajes ();
+console.log(personajeseliminados);
+
 
 
 

@@ -248,45 +248,5 @@
     "family": "Naathi",
     "image": "missandei.jpeg",
     "imageUrl": "https://thronesapi.com/assets/images/missandei.jpeg"
-  },
-  {
-    "id": 25,
-    "firstName": "Gilly",
-    "lastName": "None",
-    "fullName": "Gilly",
-    "title": "The Rabbit Keeper",
-    "family": "None",
-    "image": "gilly.jpg",
-    "imageUrl": "https://thronesapi.com/assets/images/gilly.jpg"
-  },
-  {
-    "id": 53,
-    "firstName": "Maria",
-    "lastName": "Stark",
-    "fullName": "Maria Stark",
-    "title": "No One",
-    "family": "House Stark",
-    "image": "",
-    "imageUrl": ""
-  },
-  {
-    "id": 53,
-    "firstName": "Maria",
-    "lastName": "Stark",
-    "fullName": "Maria Stark",
-    "title": "No One",
-    "family": "House Stark",
-    "image": "",
-    "imageUrl": ""
-  },
-  {
-    "id": 53,
-    "firstName": "Maria",
-    "lastName": "Stark",
-    "fullName": "Maria Stark",
-    "title": "No One",
-    "family": "House Stark",
-    "image": "",
-    "imageUrl": ""
   }
 ]
