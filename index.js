@@ -29,6 +29,7 @@ const datos = fs.readFileSync('./personajes.json', 'utf-8');
 const personajes = JSON.parse(datos);
 
 // console.log(personajes);
+//escribo el archivo
 function escribirpersonajes (personajes) {
 fs.writeFileSync('./personajes.json', JSON.stringify(personajes, null, 2), 'utf-8');
 }
@@ -62,9 +63,5 @@ return personajesfiltrados
 }
 const personajeseliminados = eliminarpersonajes ();
 console.log(personajeseliminados);
-
-
-
-
 
 
